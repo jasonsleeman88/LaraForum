@@ -110,6 +110,18 @@
 
                             <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
+                            @can('nova.view')
+                                <div class="block px-4 py-2 text-xs text-gray-400">
+                                    {{ __('Administration') }}
+                                </div>
+
+                                <x-dropdown-link href="{{ route('nova.pages.home') }}">
+                                    {{ __('Nova Admin Panel') }}
+                                </x-dropdown-link>
+
+                                <div class="border-t border-gray-200 dark:border-gray-600"></div>
+                            @endcan
+
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
